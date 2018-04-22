@@ -1,8 +1,8 @@
 import csv
 
 # Constant variable
-READ_PATH = './sample_data.csv'
-WRITE_PATH = './fitered_data.csv'
+READ_PATH = './raw_dataset/sample_data.csv'
+WRITE_PATH = './filtered_dataset/fitered_data.csv'
 ROW_NO = 23
 
 # Rule for filtering data
