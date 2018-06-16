@@ -1,13 +1,14 @@
 import csv
 
 # Constant variable
-READ_PATH = './raw_dataset/sample_data.csv'
-WRITE_PATH = './filtered_dataset/fitered_data.csv'
-ROW_NO = 23
+READ_PATH = './raw_dataset/DL022016.csv'
+WRITE_PATH = '/filtered_dataset/DL022016.csv'
 
 # Rule for filtering data
+ROW_NO = 23
 RULES = [''] * ROW_NO
-RULES[2] = 'C'
+RULES[2] = '01/02/2016' # date something
+RULES[10] = 'BBL' # company name
 
 # Initialize data
 filtered_data = []
@@ -18,12 +19,17 @@ with open(READ_PATH, newline='\n') as read_csvfile:
     # Skip header line
     next(reader, None)
     for row in reader:
+        temp_filtered_data = []
+        status = True
         # Iterate row and rules together in parallel manner
         for raw_data, rule in zip(row, RULES):
             if rule != '':
-                if raw_data.lower() == rule.lower():
-                    filtered_data.append(row)
+                if raw_data.lower() != rule.lower():
+                    status = False
 
+        if status:
+            filtered_data.append(row)
+        
 # if filtered_data is not empty write file
 if filtered_data:
     with open(WRITE_PATH, 'w', newline='\n') as write_csvfile:
