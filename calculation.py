@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 from period import calculate_no_of_period, calculate_no_of_total_volume_and_total_product
 
 # Constant variable
-READ_PATH = './filtered_dataset/DL022016.csv'
-WRITE_PATH = './calculated_dataset/DL022016.csv'
+READ_PATH = './filtered_dataset/sample_filtered_data.csv'
+WRITE_PATH = './calculated_dataset/sample_calculated_data.csv'
 
 # Initialize data
 PERIOD = 15
