@@ -105,3 +105,4 @@ venv.bak/
 
 # etc
 filtered_data/
+calculated_data/

@@ -2,13 +2,13 @@ import csv
 
 # Constant variable
 READ_PATH = './raw_dataset/DL022016.csv'
-WRITE_PATH = '/filtered_dataset/DL022016.csv'
+WRITE_PATH = './filtered_dataset/DL022016.csv'
 
 # Rule for filtering data
 ROW_NO = 23
 RULES = [''] * ROW_NO
-RULES[2] = '01/02/2016' # date something
-RULES[10] = 'BBL' # company name
+RULES[2] = '05/02/2016' # date something
+RULES[10] = 'CBG' # company name CBG
 
 # Initialize data
 filtered_data = []
